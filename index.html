@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chytré chaty - Bezpečnost a pohodlí lidí</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root {
             --primary-green: rgb(82, 158, 67);
@@ -46,11 +46,22 @@
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-green);
+            background: var(--dark-gray);
             border-radius: 4px;
         }
         .input-field:focus {
             border-color: var(--primary-green);
+        }
+        @media (max-width: 640px) {
+            .input-field {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+            }
+            .service-card {
+                padding: 1rem !important;
+            }
         }
     </style>
 </head>
@@ -60,7 +71,9 @@
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-[var(--dark-gray)]">Chytré<span class="text-[var(--primary-green)]">chaty</span></div>
+                <a href="#" id="logo-link" class="text-2xl font-bold text-[var(--dark-gray)] hover:text-[var(--primary-green)] transition-colors duration-200 focus:outline-none">
+                    Chytré<span class="text-[var(--primary-green)]">chaty</span>
+                </a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="nav-link text-gray-700 hover:text-[var(--primary-green)]">O nás</a>
                     <a href="#services" class="nav-link text-gray-700 hover:text-[var(--primary-green)]">Služby</a>
@@ -98,7 +111,7 @@
                         <a href="#projects" class="border-2 border-[var(--primary-green)] text-[var(--primary-green)] hover:bg-green-50 font-medium py-3 px-6 rounded-lg transition duration-300 text-center">Naše projekty</a>
                     </div>
                 </div>
-                <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-in flex justify-center items-center" style="animation-delay: 0.2s;">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Smart home illustration" class="rounded-lg shadow-xl w-full max-w-lg mx-auto">
                 </div>
             </div>
@@ -133,7 +146,7 @@
                     </div>
                     <div class="md:w-1/2">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Náš tým" class="rounded-lg shadow-lg w-full">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Náš tým" class="rounded-lg shadow-lg w-full aspect-video object-cover">
                             <div class="absolute -bottom-6 -right-6 bg-[var(--primary-green)] text-white p-4 rounded-lg shadow-lg hidden md:block">
                                 <div class="text-3xl font-bold">15+</div>
                                 <div class="text-sm">let zkušeností</div>
@@ -205,7 +218,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Projekt 1 -->
                     <div class="project-item relative rounded-lg overflow-hidden shadow-md block cursor-pointer" id="project-1-link">
-                        <img src="https://images.unsplash.com/photo-1600566752355-44792ad39642?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rodinný dům Praha" class="w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1600566752355-44792ad39642?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rodinný dům Praha" class="w-full aspect-video object-cover">
                         <div class="project-overlay absolute inset-0 bg-[rgba(82,158,67,0.8)] flex items-center justify-center opacity-0 transition-opacity duration-300">
                             <div class="text-white text-center px-4">
                                 <h3 class="text-xl font-semibold mb-2">Rodinný dům Praha</h3>
@@ -216,7 +229,7 @@
                     </div>
                     <!-- Projekt 2 -->
                     <div class="project-item relative rounded-lg overflow-hidden shadow-md block cursor-pointer" id="project-2-link">
-                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kancelářské prostory Brno" class="w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kancelářské prostory Brno" class="w-full aspect-video object-cover">
                         <div class="project-overlay absolute inset-0 bg-[rgba(82,158,67,0.8)] flex items-center justify-center opacity-0 transition-opacity duration-300">
                             <div class="text-white text-center px-4">
                                 <h3 class="text-xl font-semibold mb-2">Kancelářské prostory Brno</h3>
@@ -227,7 +240,7 @@
                     </div>
                     <!-- Projekt 3 -->
                     <div class="project-item relative rounded-lg overflow-hidden shadow-md block cursor-pointer" id="project-3-link">
-                        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rekreační chata Šumava" class="w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rekreační chata Šumava" class="w-full aspect-video object-cover">
                         <div class="project-overlay absolute inset-0 bg-[rgba(82,158,67,0.8)] flex items-center justify-center opacity-0 transition-opacity duration-300">
                             <div class="text-white text-center px-4">
                                 <h3 class="text-xl font-semibold mb-2">Rekreační chata Šumava</h3>
@@ -238,7 +251,7 @@
                     </div>
                     <!-- Projekt 4 -->
                     <div class="project-item relative rounded-lg overflow-hidden shadow-md block cursor-pointer" id="project-4-link">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Moderní byt Ostrava" class="w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Moderní byt Ostrava" class="w-full aspect-video object-cover">
                         <div class="project-overlay absolute inset-0 bg-[rgba(82,158,67,0.8)] flex items-center justify-center opacity-0 transition-opacity duration-300">
                             <div class="text-white text-center px-4">
                                 <h3 class="text-xl font-semibold mb-2">Moderní byt Ostrava</h3>
@@ -249,7 +262,7 @@
                     </div>
                     <!-- Projekt 5 -->
                     <div class="project-item relative rounded-lg overflow-hidden shadow-md block cursor-pointer" id="project-5-link">
-                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Obchodní centrum Plzeň" class="w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Obchodní centrum Plzeň" class="w-full aspect-video object-cover">
                         <div class="project-overlay absolute inset-0 bg-[rgba(82,158,67,0.8)] flex items-center justify-center opacity-0 transition-opacity duration-300">
                             <div class="text-white text-center px-4">
                                 <h3 class="text-xl font-semibold mb-2">Obchodní centrum Plzeň</h3>
@@ -277,14 +290,14 @@
                                 <div class="text-[var(--primary-green)] text-xl mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
                                 <div>
                                     <h4 class="font-medium text-lg text-[var(--dark-gray)]">Adresa</h4>
-                                    <p class="text-gray-600">Ulice 123, 110 00 Praha 1, Česká republika</p>
+                                    <p class="text-gray-600">Rybná 716/24, Staré Město, 110 00 Praha</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <div class="text-[var(--primary-green)] text-xl mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
                                 <div>
                                     <h4 class="font-medium text-lg text-[var(--dark-gray)]">Telefon</h4>
-                                    <p class="text-gray-600">+420 123 456 789</p>
+                                    <p class="text-gray-600">+420 773 578 458</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -298,7 +311,7 @@
                                 <div class="text-[var(--primary-green)] text-xl mr-4 mt-1"><i class="fas fa-clock"></i></div>
                                 <div>
                                     <h4 class="font-medium text-lg text-[var(--dark-gray)]">Otevírací doba</h4>
-                                    <p class="text-gray-600">Po-Pá: 8:00 - 16:00<br>So-Ne: zavřeno</p>
+                                    <p class="text-gray-600">Po-Pá: 8:00 - 18:00<br>So-Ne: zavřeno</p>
                                 </div>
                             </div>
                             <div>
@@ -306,12 +319,11 @@
                                 <div class="flex space-x-4">
                                     <a href="#" class="text-[var(--primary-green)] hover:text-green-700 text-2xl"><i class="fab fa-facebook"></i></a>
                                     <a href="#" class="text-[var(--primary-green)] hover:text-green-700 text-2xl"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class="text-[var(--primary-green)] hover:text-green-700 text-2xl"><i class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-8">
-                            <a href="tel:+420123456789" class="inline-flex items-center bg-[var(--primary-green)] hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 mr-4 mb-4">
+                            <a href="tel:+420773578458" class="inline-flex items-center bg-[var(--primary-green)] hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 mr-4 mb-4">
                                 <i class="fas fa-phone-alt mr-2"></i> Zavolejte nám
                             </a>
                             <a href="mailto:info@chytrechaty.cz" class="inline-flex items-center border-2 border-[var(--primary-green)] text-[var(--primary-green)] hover:bg-green-50 font-medium py-3 px-6 rounded-lg transition duration-300 mb-4">
@@ -390,10 +402,32 @@
     </footer>
 
     <script>
+    // Logo click: return to main page from anywhere
+    document.getElementById('logo-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Hide project detail if open
+        if(document.getElementById('main-page').style.display === 'none') {
+            document.getElementById('project-detail').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+        }
+        // Scroll to top
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        // Hide mobile menu if open
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
     // Mobile menu toggle
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
+    });
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
     });
 
     // Делегирование: плавный скролл и возврат на главную при клике на якорные ссылки,
@@ -558,7 +592,7 @@
             let html = `
                 <h1 class="text-3xl md:text-4xl font-bold mb-6 text-[var(--dark-gray)]">${project.title}</h1>
                 <div class="mb-8 rounded-lg overflow-hidden shadow-xl">
-                    <img src="${project.mainImage}" alt="${project.title}" class="w-full h-auto">
+                    <img src="${project.mainImage}" alt="${project.title}" class="w-full aspect-video object-cover">
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="bg-white p-6 rounded-lg shadow-md">
@@ -585,7 +619,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         ${project.gallery.map(img => `
                             <div class="rounded-lg overflow-hidden shadow-md">
-                                <img src="${img.src}" alt="${img.alt}" class="w-full h-64 object-cover">
+                                <img src="${img.src}" alt="${img.alt}" class="w-full aspect-video object-cover">
                             </div>
                         `).join('')}
                     </div>
